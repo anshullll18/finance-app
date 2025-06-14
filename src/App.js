@@ -1,8 +1,7 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, TrendingUp, TrendingDown, DollarSign, Target, LogOut, User } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart as RechartsPieChart, Cell, BarChart, Bar } from 'recharts';
-// import { PieChart, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart as RechartsPieChart, Cell, BarChart, Bar ,Pie } from 'recharts';
 import './App.css';
 
 const PersonalFinanceTracker = () => {
@@ -553,7 +552,7 @@ const PersonalFinanceTracker = () => {
                     {pieData.length > 0 ? (
                       <ResponsiveContainer width="100%" height={300}>
                         <RechartsPieChart>
-                          <RechartsPieChart
+                          <Pie
                             data={pieData}
                             cx="50%"
                             cy="50%"
@@ -566,7 +565,7 @@ const PersonalFinanceTracker = () => {
                             {pieData.map((entry, index) => (
                               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
-                          </RechartsPieChart>
+                          </Pie>
                           <Tooltip />
                         </RechartsPieChart>
                       </ResponsiveContainer>
